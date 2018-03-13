@@ -16,26 +16,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        int price=quantity*5;
+        int price=calculatePrice();
         String priceMessage="Total: $"+price+"\n"+"Thank you!";
         displayMessage(priceMessage);
     }
 
     public void increment(View view) {
         quantity=quantity+1;
-        display(quantity);
+        displayQuantity(quantity);
     }
     public void decrement(View view) {
         quantity=quantity-1;
-        display(quantity);
+        displayQuantity(quantity);
 
     }
 
 
 
-    private void display(int number) {
+    private void displayQuantity(int numberOfCoffee) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText("" + numberOfCoffee);
     }
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
@@ -44,5 +44,10 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
+    }
+
+    private int calculatePrice() {
+        int price = quantity * 5;
+        return price;
     }
 }
