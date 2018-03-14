@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    int quantity=0;
+    int quantity=2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         int price=calculatePrice();
-        String priceMessage="Total: $"+price+"\n"+"Thank you!";
-        displayMessage(priceMessage);
+        displayMessage(createOrderSummary(5));
+        createOrderSummary(price);
     }
 
     public void increment(View view) {
@@ -37,13 +37,18 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + numberOfCoffee);
     }
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
+
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        TextView priceTextView = (TextView) findViewById(R.id.order_summary_text_view);
         priceTextView.setText(message);
+    }
+
+    private String createOrderSummary(int price){
+        String message="Name: Kaptain Kunal\n";
+        message=message+"Quantity: "+quantity+"\n";
+        message=message+"Total: $"+price*quantity+"\n";
+        message=message+"Thank you!";
+        return message;
     }
 
     private int calculatePrice() {
