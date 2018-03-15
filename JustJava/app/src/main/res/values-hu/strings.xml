@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Just Java</string>
+    <string name="hint_text">Név</string>
+    <string name="topping_text">Öntetek</string>
+    <string name="whipped_cream_text">Tejszínhab</string>
+    <string name="chocolate_text">Csokoládé</string>
+    <string name="quantity_text">Mennyiség</string>
+    <string name="order_text">Rendelés</string>
+    <string name="too_much_coffee">Nem tudsz 100-nál több kávét rendelni</string>
+    <string name="too_few_coffee">Nem tudsz egynél kevesebb kávét rendelni</string>
+    <string name="name_text">Név: </string>
+    <string name="whipped_cream_add">Hozzáadott tejszínhab? </string>
+    <string name="chocolate_add">Hozzáadott csokoládé? </string>
+    <string name="total_price">Összesen $</string>
+    <string name="thank_you_text">Köszönöm szépen</string>
+</resources>
+
+
+
+
+
